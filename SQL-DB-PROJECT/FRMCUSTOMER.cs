@@ -43,6 +43,15 @@ namespace SQL_DB_PROJECT
         void Ekle()
         {
             baglanti.Open();
+            SqlCommand komut2 = new SqlCommand("insert into tblcustomer(customername,surename,city,cash) values (@p1,@p2,@p3,@p4)", baglanti);
+            komut2.Parameters.AddWithValue("@p1", TXTMUSTERYAD.Text);
+            komut2.Parameters.AddWithValue("@p2", TXTMUSTERYSOYAD.Text);
+            komut2.Parameters.AddWithValue("@p3", CBSEHIR.Text);
+            komut2.Parameters.AddWithValue("@p4", TXTCASH.Text);
+            komut2.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show("customer save successfully");
+            Listele();
             
         }
 
@@ -60,6 +69,11 @@ namespace SQL_DB_PROJECT
             TXTMUSTERYSOYAD.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             CBSEHIR.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             TXTCASH.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+        }
+
+        private void BTNSAVE_Click(object sender, EventArgs e)
+        {
+            Ekle();
         }
     }
 }
