@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bacf26747a9849f18fd4a417cf0935dc" Name="Diagram1">
+        <EntityTypeShape EntityType="SalesDBModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.TBLACTION" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.TBLCATEGORY" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.TBLCUSTOMER" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.TBLEMPLOYEE" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.TBLPRODUCT" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="SalesDBModel.FK_TBLACTION_TBLCUSTOMER" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_TBLACTION_TBLEMPLOYEE" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_TBLACTION_TBLPRODUCT" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_TBLPRODUCT_TBLCATEGORY" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
