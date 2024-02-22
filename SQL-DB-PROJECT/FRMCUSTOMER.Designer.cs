@@ -82,6 +82,7 @@
             this.BTNGUNCELLE.TabIndex = 24;
             this.BTNGUNCELLE.Text = "UPDATE";
             this.BTNGUNCELLE.UseVisualStyleBackColor = false;
+            this.BTNGUNCELLE.Click += new System.EventHandler(this.BTNGUNCELLE_Click);
             // 
             // btnsil
             // 
@@ -96,6 +97,7 @@
             this.btnsil.TabIndex = 22;
             this.btnsil.Text = "DELETE";
             this.btnsil.UseVisualStyleBackColor = false;
+            this.btnsil.Click += new System.EventHandler(this.btnsil_Click);
             // 
             // BTNSAVE
             // 
@@ -216,6 +218,7 @@
             this.BTNARA.TabIndex = 26;
             this.BTNARA.Text = "SEARCH";
             this.BTNARA.UseVisualStyleBackColor = false;
+            this.BTNARA.Click += new System.EventHandler(this.BTNARA_Click);
             // 
             // label5
             // 

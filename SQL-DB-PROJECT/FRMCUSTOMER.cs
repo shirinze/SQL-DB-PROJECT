@@ -54,6 +54,39 @@ namespace SQL_DB_PROJECT
             Listele();
             
         }
+        void sil()
+        {
+            baglanti.Open();
+            SqlCommand komut3 = new SqlCommand("delete from tblcustomer where customerid=@p1", baglanti);
+            komut3.Parameters.AddWithValue("@p1", TXTMUSTERYID.Text);
+            komut3.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show("delete successfully");
+            Listele();
+        }
+        void Guncelle()
+        {
+            baglanti.Open();
+            SqlCommand komut4 = new SqlCommand("UPDATE TBLCUSTOMER SET CUSTOMERNAME=@P1,SURENAME=@P2,CITY=@P3,CASH=@P4 WHERE CUSTOMERID=@P5", baglanti);
+            komut4.Parameters.AddWithValue("@P1", TXTMUSTERYAD.Text);
+            komut4.Parameters.AddWithValue("@P2", TXTMUSTERYSOYAD.Text);
+            komut4.Parameters.AddWithValue("@P3", CBSEHIR.Text);
+            komut4.Parameters.AddWithValue("@P4",Decimal.Parse( TXTCASH.Text));
+            komut4.Parameters.AddWithValue("@P5", TXTMUSTERYID.Text);
+            komut4.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show("update successfully");
+            Listele();
+        }
+        void Search()
+        {
+            SqlCommand ara = new SqlCommand("select * from tblcustomer where customername=@p1", baglanti);
+            ara.Parameters.AddWithValue("@p1", TXTMUSTERYAD.Text);
+            SqlDataAdapter da = new SqlDataAdapter(ara);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
 
         private void BTNLIST_Click(object sender, EventArgs e)
         {
@@ -74,6 +107,21 @@ namespace SQL_DB_PROJECT
         private void BTNSAVE_Click(object sender, EventArgs e)
         {
             Ekle();
+        }
+
+        private void btnsil_Click(object sender, EventArgs e)
+        {
+            sil();
+        }
+
+        private void BTNGUNCELLE_Click(object sender, EventArgs e)
+        {
+            Guncelle();
+        }
+
+        private void BTNARA_Click(object sender, EventArgs e)
+        {
+            Search();
         }
     }
 }
