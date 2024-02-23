@@ -61,5 +61,11 @@ namespace SQL_DB_PROJECT
             }
             baglanti.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FRMPRODUCT FR2 = new FRMPRODUCT();
+            FR2.Show();
+        }
     }
 }
